@@ -17,6 +17,12 @@ function clean() {
     mkdir ${BUILD_DIR}
 }
 
+# things to note
+# at the time this was made CUDA 10 cannot be built with newer compilers, hence
+# the COMPILER directives.
+# with CUDA on the extra modules must also be available, but codecs off as that
+# is not longer available in CUDA...
+
 function makemake() {
     cmake \
         -D CMAKE_CXX_COMPILER=${CXX} \
